@@ -1,0 +1,30 @@
+comment: 'Running main workflow with initial steps'
+main_tasks:
+  - comment: 'Create table...'
+    subtasks:
+      - type: 'simple_sql'
+        file_location: './project/sql/ddl.sql'
+  - comment: 'Inserting data...'
+    subtasks:
+      - type: 'complex_sql'
+        file_location: './project/sql/insert_data.sql'
+  - comment: 'Crud scripts.'
+    subtasks:
+       - type: 'simple_sql'
+         file_location: './project/sql/crud.sql'
+  - comment: 'Requests scripts.'
+    subtasks:
+      - type: 'simple_sql'
+        file_location: './project/sql/requests.sql'
+  - comment: 'Views scripts.'
+    subtasks:
+      - type: 'simple_sql'
+        file_location: './project/sql/views.sql'
+  - comment: 'procedures scripts.'
+    subtasks:
+      - type: 'complex_sql'
+        file_location: './project/sql/procedures.sql'
+  - comment: 'triggers scripts.'
+    subtasks:
+      - type: 'complex_sql'
+        file_location: './project/sql/triggers.sql'
